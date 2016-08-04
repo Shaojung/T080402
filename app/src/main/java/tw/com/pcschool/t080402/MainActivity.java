@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        StudentDAO dao = new StudentDAOImpl();
+        dao.addStudent(new Student("John", "123", "123123"));
 
     }
 
