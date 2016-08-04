@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,5 +83,22 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void click2(View v)
+    {
+
+        ArrayList<Student> mylist = new ArrayList();
+
+        Student s1 = new Student("John", "aaa", "123");
+        Student s2 = new Student("Bob", "bbb", "222");
+
+        mylist.add(s1);
+        mylist.add(s2);
+
+        Gson gson = new Gson();
+
+        String str = gson.toJson(mylist, new TypeToken<ArrayList<Student>>() {}.getType());
+        Log.d("JSON", str);
     }
 }
