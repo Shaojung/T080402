@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -58,13 +59,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void click1(View v)
     {
-        JSONObject obj = new JSONObject();
+
+        JSONArray array = new JSONArray();
+        JSONObject obj;
         try {
+            obj = new JSONObject();
             obj.put("name", "John");
             obj.put("addr", "Taipei");
             obj.put("tel", "123456");
+            array.put(obj);
+            obj = new JSONObject();
+            obj.put("name", "Mary");
+            obj.put("addr", "Tainan");
+            obj.put("tel", "654321");
+            array.put(obj);
 
-            Log.d("JSON", obj.toString());
+            Log.d("JSON", array.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
