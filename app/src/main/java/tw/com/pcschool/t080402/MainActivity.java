@@ -3,6 +3,10 @@ package tw.com.pcschool.t080402;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+    }
+
+    public void click1(View v)
+    {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("name", "John");
+            obj.put("addr", "Taipei");
+            obj.put("tel", "123456");
+
+            Log.d("JSON", obj.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 }
