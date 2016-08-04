@@ -1,5 +1,6 @@
 package tw.com.pcschool.t080402;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,6 +8,7 @@ import java.util.List;
  */
 public class StudentDAOImpl implements StudentDAO
 {
+    ArrayList<Student> mylist;
     @Override
     public void addStudent(Student s) {
 
@@ -24,6 +26,6 @@ public class StudentDAOImpl implements StudentDAO
 
     @Override
     public List getAllStudent() {
-        return null;
+        return mylist;
     }
 }
